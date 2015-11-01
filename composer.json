@@ -1,11 +1,11 @@
 {
-    "name": "ahonymous/hw4",
+    "name": "PulsarV/hw4",
     "description": "Geekhub AdvancedPHP 2015 HW#4",
     "license": "MIT",
     "authors": [
         {
-            "name": "Alex Moshta",
-            "email": "ahonymous@gmail.com"
+            "name": "Volodymyr Kravchuk",
+            "email": "pulsarv@rambler.ru"
         }
     ],
     "autoload": {
