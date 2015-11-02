@@ -16,11 +16,11 @@ interface ConnectorInterface
      * @param $password
      * @return mixed
      */
-    public function connect($host, $port, $dbname, $user, $password);
+    public static function connect($host, $port, $dbname, $user, $password);
 
     /**
      * @param $db
      * @return mixed
      */
-    public function connectClose($db);
+    public static function connectClose($db);
 }
