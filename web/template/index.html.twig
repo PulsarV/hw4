@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="style/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <h2>Таблиця {{ tableBook }}</h2>
+    <table>
+        <tr>
+            {% for headElement in headBookArray %}
+            <th>{{ headElement }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in tableBookData %}
+        <tr>
+            {% for currentItem in item %}
+            <td>{{ currentItem }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Таблиця {{ tableCustomer }}</h2>
+    <table>
+        <tr>
+            {% for headElement in headCustomerArray %}
+                <th>{{ headElement }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in tableCustomerData %}
+            <tr>
+                {% for currentItem in item %}
+                    <td>{{ currentItem }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Таблиця {{ tableOrder }}</h2>
+    <table>
+        <tr>
+            {% for headElement in headOrderArray %}
+                <th>{{ headElement }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in tableOrderData %}
+            <tr>
+                {% for currentItem in item %}
+                    <td>{{ currentItem }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Таблиця {{ tableOrderItem }}</h2>
+    <table>
+        <tr>
+            {% for headElement in headOrderItemArray %}
+                <th>{{ headElement }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in tableOrderItemData %}
+            <tr>
+                {% for currentItem in item %}
+                    <td>{{ currentItem }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
