@@ -21,9 +21,9 @@ class Order
      * @param $Amount
      * @param $Date
      */
-    public function __construct($customerId, $Amount)
+    public function __construct($orderId, $customerId, $Amount)
     {
-        $this->orderId = null;
+        $this->orderId = $orderId;
         $this->customerId = $customerId;
         $this->Amount = $Amount;
     }

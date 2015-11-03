@@ -22,9 +22,9 @@ class Customer
      * @param $address
      * @param $city
      */
-    public function __construct($name, $address, $city)
+    public function __construct($customerId, $name, $address, $city)
     {
-        $this->customerId = null;
+        $this->customerId = $customerId;
         $this->name = $name;
         $this->address = $address;
         $this->city = $city;

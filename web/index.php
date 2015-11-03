@@ -14,19 +14,33 @@ use Entity\OrderItem;
 
 $dbHandler = Connector::connect($config['host'], $config['port'], $config['db_name'], $config['db_user'], $config['db_password']);
 
-$customers = new CustomersManager($dbHandler);
-$customersResult = $customers->findAll();
 $books = new BooksManager($dbHandler);
 $booksResult = $books->findAll();
+$customers = new CustomersManager($dbHandler);
+$customersResult = $customers->findAll();
 $orders = new OrdersManager($dbHandler);
 $ordersResult = $orders->findAll();
 $orderItems = new OrderItemsManager($dbHandler);
 $orderItemsResult = $orderItems->findAll();
 
-$booksOutPut = '<tr><th>ISBN</th><th>Author</th><th>Title</th><th>Price</th></tr>';
-
+$booksOutPut = [];
 foreach ($booksResult as $i) {
-    $booksOutPut .= '<tr><td>' . $i->getIsbn() . '</td><td>' . $i->getAuthor() . '</td><td>' . $i->getTitle() . '</td><td>' . $i->getPrice() . '</td></tr>';
+    $booksOutPut[] = (array)$i;
+}
+
+$customersOutPut = [];
+foreach ($customersResult as $i) {
+    $customersOutPut[] = (array)$i;
+}
+
+$ordersOutPut = [];
+foreach ($ordersResult as $i) {
+    $ordersOutPut[] = (array)$i;
+}
+
+$orderItemsOutPut = [];
+foreach ($orderItemsResult as $i) {
+    $orderItemsOutPut[] = (array)$i;
 }
 
 
@@ -37,15 +51,15 @@ $indexPage = $twig->loadTemplate('index.html.twig');
 echo $indexPage->render(array(
     'title' => 'Структура бази даних',
     'tableBook' => 'Book',
-    'tableBookData' => Array($booksOutPut),
+    'headBookArray' => array('ISBN', 'Author', 'Title', 'Price'),
+    'tableBookData' => $booksOutPut,
+    'tableCustomer' => 'Customer',
+    'headCustomerArray' => array('CustomerId', 'Name', 'Address', 'City'),
+    'tableCustomerData' => $customersOutPut,
+    'tableOrder' => 'Order',
+    'headOrderArray' => array('OrderId', 'CustomerId', 'Amount'),
+    'tableOrderData' => $ordersOutPut,
+    'tableOrderItem' => 'OrderItem',
+    'headOrderItemArray' => array('OrderId', 'ISBN', 'Quantity'),
+    'tableOrderItemData' => $orderItemsOutPut,
 ));
-
-
-
-/*$r = $orders->findAll();
-foreach ($r as $o) {
-    echo $o->getOrderId();
-    echo $o->getCustomerId();
-    echo $o->getAmount();
-}
-

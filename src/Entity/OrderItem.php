@@ -22,7 +22,7 @@ class OrderItem
      */
     public function __construct($orderId, $isbn, $quantity)
     {
-        $this->orderId = null;
+        $this->orderId=$orderId;
         $this->isbn = $isbn;
         $this->quantity = $quantity;
     }
