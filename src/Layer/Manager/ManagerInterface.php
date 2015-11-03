@@ -31,24 +31,14 @@ interface ManagerInterface
 
     /**
      * Search entity data in the DB by Id
-     * @param $entityName
      * @param $id
      * @return mixed
      */
-    public function find($entityName, $id);
+    public function find($id);
 
     /**
      * Search all entity data in the DB
-     * @param $entityName
      * @return array
      */
-    public function findAll($entityName);
-
-    /**
-     * Search all entity data in the DB like $criteria rules
-     * @param $entityName
-     * @param array $criteria
-     * @return mixed
-     */
-    public function findBy($entityName, $criteria = []);
+    public function findAll();
 }

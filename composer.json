@@ -10,7 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Layer\\": "src/Layer/"
+            "Layer\\": "src/Layer/",
+            "Entity\\": "src/Entity"
         }
     },
     "minimum-stability": "stable",

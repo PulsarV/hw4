@@ -16,6 +16,21 @@ class Book
     protected $price;
 
     /**
+     * Book constructor.
+     * @param $isbn
+     * @param $author
+     * @param $title
+     * @param $price
+     */
+    public function __construct($isbn, $author, $title, $price)
+    {
+        $this->isbn = $isbn;
+        $this->author = $author;
+        $this->title = $title;
+        $this->price = $price;
+    }
+
+    /**
      * @return mixed
      */
     public function getIsbn()

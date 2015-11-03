@@ -16,6 +16,21 @@ class Customer
     protected $city;
 
     /**
+     * Customer constructor.
+     * @param $customerId
+     * @param $name
+     * @param $address
+     * @param $city
+     */
+    public function __construct($name, $address, $city)
+    {
+        $this->customerId = null;
+        $this->name = $name;
+        $this->address = $address;
+        $this->city = $city;
+    }
+
+    /**
      * @return mixed
      */
     public function getCustomerId()

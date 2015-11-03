@@ -15,6 +15,19 @@ class OrderItem
     protected $quantity;
 
     /**
+     * OrderItem constructor.
+     * @param $orderId
+     * @param $isbn
+     * @param $quantity
+     */
+    public function __construct($orderId, $isbn, $quantity)
+    {
+        $this->orderId = null;
+        $this->isbn = $isbn;
+        $this->quantity = $quantity;
+    }
+
+    /**
      * @return mixed
      */
     public function getOrderId()

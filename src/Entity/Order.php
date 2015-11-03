@@ -13,7 +13,21 @@ class Order
     protected $orderId;
     protected $customerId;
     protected $Amount;
-    protected $Date;
+
+    /**
+     * Order constructor.
+     * @param $orderId
+     * @param $customerId
+     * @param $Amount
+     * @param $Date
+     */
+    public function __construct($customerId, $Amount)
+    {
+        $this->orderId = null;
+        $this->customerId = $customerId;
+        $this->Amount = $Amount;
+    }
+
 
     /**
      * @return mixed
@@ -61,21 +75,5 @@ class Order
     public function setAmount($Amount)
     {
         $this->Amount = $Amount;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDate()
-    {
-        return $this->Date;
-    }
-
-    /**
-     * @param mixed $Date
-     */
-    public function setDate($Date)
-    {
-        $this->Date = $Date;
     }
 }
