@@ -12,6 +12,10 @@ use Entity\Customer;
 
 class CustomersManager extends AbstractManager
 {
+    /**
+     * @param mixed $entity
+     * @return bool|string
+     */
     public function insert($entity)
     {
         try {
@@ -27,6 +31,10 @@ class CustomersManager extends AbstractManager
         return $this->dbh->lastInsertId();
     }
 
+    /**
+     * @param $entity
+     * @return bool
+     */
     public function update($entity)
     {
         try {
@@ -43,6 +51,10 @@ class CustomersManager extends AbstractManager
         return true;
     }
 
+    /**
+     * @param $entity
+     * @return bool
+     */
     public function remove($entity)
     {
         try {
@@ -56,6 +68,10 @@ class CustomersManager extends AbstractManager
         return true;
     }
 
+    /**
+     * @param $id
+     * @return array|bool
+     */
     public function find($id)
     {
         try {
@@ -74,6 +90,9 @@ class CustomersManager extends AbstractManager
         return $resultArray;
     }
 
+    /**
+     * @return array|bool
+     */
     public function findAll()
     {
         try {
